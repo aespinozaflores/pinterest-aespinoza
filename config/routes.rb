@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :pics
-  resources :pins
+   resources :pins
   get 'welcome/index'
 
   root 'welcome#index'
