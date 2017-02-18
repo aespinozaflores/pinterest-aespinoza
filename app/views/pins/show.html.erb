@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+	<div class="col-md-15">
+		<div class="thumbnail">
+			  <strong>Photo:</strong>
+			  <%= image_tag(@pin.photo, :style=> 'img-responsive; margin-top:8px; margin-bottom:8px') %>
+			
+			  <strong>Description:</strong>
+			  <%= @pin.description %>
+		
+		</div>
+		<%= link_to 'Edit', edit_pin_path(@pin) %> |
+		<%= link_to 'Back', pins_path %>
+	</div>
