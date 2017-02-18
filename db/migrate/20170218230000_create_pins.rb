@@ -1,6 +1,6 @@
-class CreatePics < ActiveRecord::Migration[5.0]
+class CreatePins < ActiveRecord::Migration[5.0]
   def change
-    create_table :pics do |t|
+    create_table :pins do |t|
       t.string :photo
       t.string :description
 
