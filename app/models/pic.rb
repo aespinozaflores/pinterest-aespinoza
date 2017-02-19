@@ -1,2 +1,0 @@
-class Pic < ApplicationRecord
-end
