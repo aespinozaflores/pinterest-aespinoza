@@ -1,8 +1,19 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!, except:[:index, :show]
   # GET /pins
   # GET /pins.json
+  
+  def pinsof
+  @user_id = params[:user_id]
+  @user = User.find(@user_id)
+  @pins = @user.pins
+  end
+  
+  def mypins
+  @pins=current_user.pins
+  end
+
   def index
     @pins = Pin.all
   end
@@ -25,7 +36,7 @@ class PinsController < ApplicationController
   # POST /pins.json
   def create
     @pin = Pin.new(pin_params)
-
+    @pin.user_id = current_user.id
     respond_to do |format|
       if @pin.save
         format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
@@ -69,6 +80,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:photo, :description)
+      params.require(:pin).permit(:photo, :description, :user_id)
     end
 end
