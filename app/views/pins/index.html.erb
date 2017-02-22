@@ -3,7 +3,7 @@
   <div id="container" class="js-masonry">
     <br>
         <% @pins.each do |pin| %>
-          <div class="item" style="width:25%">
+          <div class="item" style="width:60%">
             <div class="thumbnail">
             <%= pin.description %>    
               <%= image_tag(pin.photo, :style=> 'img-responsive') %>

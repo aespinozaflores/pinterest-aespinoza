@@ -1,10 +1,9 @@
-<div id="container" class="">
-  <div class="container">
+  <h1>Listing Pins</h1>
+<div id="container" class="js-masonry">
     <p id="notice"><%= notice %></p>
-    <h1>Listing Pins</h1>
     <br>
       <% @pins.each do |pin| %>
-        <div class="col-md-3">
+        <div class="item" style="width:60%">
           <div class="thumbnail">
             <%= pin.description %>    
             <%= image_tag(pin.photo, :style=> 'img-responsive') %>
@@ -23,5 +22,4 @@
     <% if user_signed_in? %>
     <%= link_to 'New Pin', new_pin_path, :style=>'color:white' %>
     <% end %>
-  </div>
 </div>
