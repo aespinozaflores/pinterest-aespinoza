@@ -1,6 +1,6 @@
 <h1>Listing Pins</h1>
 <p id="notice"><%= notice %></p>
-  <div id="container" class="">
+  <div id="container" class="js-masonry">
     <br>
         <% @pins.each do |pin| %>
           <div class="item" style="width:25%">
@@ -24,16 +24,31 @@
 </div>
 
 <script type="text/javascript">
-  var elem = document.querySelector('.grid');
-var msnry = new Masonry( elem, {
-  // options
-  itemSelector: '.grid-item',
+ var $container = $('#container');
+  //initialize
+$container.Masonry({
   columnWidth: 200
+  item.selector: '.item'
 });
 
 // element argument can be a selector string
 //   for an individual element
-var msnry = new Masonry( '.grid', {
+//var msnry = new Masonry( '.grid', {
   // options
+//});
+})
+$(window).load(function(){
+  var $container = $('#container');
+  //initialize
+$container.Masonry({
+  columnWidth: 200
+  item.selector: '.item'
 });
+
+// element argument can be a selector string
+//   for an individual element
+//var msnry = new Masonry( '.grid', {
+  // options
+//});
+})
 </script>
